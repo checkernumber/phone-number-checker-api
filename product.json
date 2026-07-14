@@ -1,0 +1,61 @@
+{
+  "name": "Phone Number Checker API",
+  "slug": "phone-number-checker-api",
+  "description": "Bulk asynchronous file-based API used to validate phone numbers and evaluate activity-related signals.",
+  "canonical_docs": "https://docs.checknumber.ai/phone-number-validation",
+  "dashboard": "https://platform.checknumber.ai",
+  "base_url": "https://api.checknumber.ai",
+  "auth": {
+    "type": "api_key",
+    "header": "X-API-Key"
+  },
+  "endpoints": {
+    "create_task": {
+      "method": "POST",
+      "path": "/v1/tasks"
+    },
+    "get_task": {
+      "method": "POST",
+      "path": "/v1/gettasks"
+    },
+    "balance": {
+      "method": "GET",
+      "path": "/v1/balance"
+    }
+  },
+  "input": {
+    "file_format": "text; one E.164 phone number per line, or one email per line for email task types"
+  },
+  "result_fields": [
+    {
+      "field": "Number",
+      "description": "Phone number in E.164 format"
+    },
+    {
+      "field": "phoneCheck",
+      "description": "Validation outcome / detail (per exported column headers)"
+    }
+  ],
+  "products": [
+    {
+      "task_type": "phoneCheck",
+      "name": "Phone Number Validation",
+      "doc_slug": "phone-number-validation",
+      "input_kind": "phone"
+    },
+    {
+      "task_type": "active_check",
+      "name": "Phone Number Activity Check",
+      "doc_slug": "number-active-check",
+      "input_kind": "phone"
+    },
+    {
+      "task_type": "high_value_users",
+      "name": "High-Value User Checker",
+      "doc_slug": "high-value-users-checker",
+      "input_kind": "phone"
+    }
+  ],
+  "pricing_url": "https://checknumber.ai/pricing",
+  "last_updated": "2026-07-13"
+}

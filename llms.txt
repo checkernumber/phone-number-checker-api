@@ -1,0 +1,39 @@
+# Phone Number Checker API
+
+> Official CheckNumber code examples for a bulk, asynchronous API used to validate phone numbers and evaluate activity-related signals.
+
+Base URL: https://api.checknumber.ai
+Authentication: X-API-Key request header
+
+## Workflow
+
+1. Submit: POST https://api.checknumber.ai/v1/tasks with `file` and `task_type=phoneCheck`.
+2. Poll: POST https://api.checknumber.ai/v1/gettasks with `task_id`.
+3. Download: retrieve `result_url` after status becomes `exported`.
+
+## Variants
+
+- `task_type=phoneCheck` — Phone Number Validation: https://docs.checknumber.ai/phone-number-validation
+- `task_type=active_check` — Phone Number Activity Check: https://docs.checknumber.ai/number-active-check
+- `task_type=high_value_users` — High-Value User Checker: https://docs.checknumber.ai/high-value-users-checker
+
+## Pricing
+
+Current terms: https://checknumber.ai/pricing
+Balance endpoint: GET https://api.checknumber.ai/v1/balance
+
+## Docs
+
+- Canonical documentation: https://docs.checknumber.ai/phone-number-validation
+- Dashboard and API keys: https://platform.checknumber.ai
+
+## Code examples
+
+- examples/python
+- examples/nodejs
+- examples/go
+- examples/java
+- examples/csharp
+- examples/php
+- examples/javascript
+- examples/shell
