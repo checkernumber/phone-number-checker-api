@@ -1,10 +1,15 @@
 {
   "name": "Phone Number Checker API",
+  "brand": "CheckNumber",
   "slug": "phone-number-checker-api",
-  "description": "Bulk asynchronous file-based API used to validate phone numbers and evaluate activity-related signals.",
+  "repository": "checkernumber/phone-number-checker-api",
+  "description": "Asynchronous file-based Number Checker checks.",
+  "official_site": "https://checknumber.ai",
+  "landing_page": "https://checknumber.ai/products/number-checker",
   "canonical_docs": "https://docs.checknumber.ai/phone-number-validation",
   "dashboard": "https://platform.checknumber.ai",
   "base_url": "https://api.checknumber.ai",
+  "mode": "async",
   "auth": {
     "type": "api_key",
     "header": "X-API-Key"
@@ -24,38 +29,48 @@
     }
   },
   "input": {
-    "file_format": "text; one E.164 phone number per line, or one email per line for email task types"
+    "file_format": "text file, one E.164 phone number per line according to task type"
   },
-  "result_fields": [
-    {
-      "field": "Number",
-      "description": "Phone number in E.164 format"
-    },
-    {
-      "field": "phoneCheck",
-      "description": "Validation outcome / detail (per exported column headers)"
-    }
-  ],
   "products": [
     {
       "task_type": "phoneCheck",
-      "name": "Phone Number Validation",
+      "name": "Validity Checker",
       "doc_slug": "phone-number-validation",
-      "input_kind": "phone"
+      "input_kind": "phone",
+      "min_numbers": 2000,
+      "max_numbers": 10000000,
+      "result_fields": [
+        "number",
+        "activated"
+      ]
     },
     {
       "task_type": "active_check",
-      "name": "Phone Number Activity Check",
+      "name": "Activity Checker",
       "doc_slug": "number-active-check",
-      "input_kind": "phone"
+      "input_kind": "phone",
+      "min_numbers": 2000,
+      "max_numbers": 10000000,
+      "result_fields": [
+        "number",
+        "activated"
+      ]
     },
     {
       "task_type": "high_value_users",
-      "name": "High-Value User Checker",
+      "name": "High-Value Checker",
       "doc_slug": "high-value-users-checker",
-      "input_kind": "phone"
+      "input_kind": "phone",
+      "min_numbers": 1000,
+      "max_numbers": 500000,
+      "result_fields": [
+        "Mobile Number",
+        "Result"
+      ]
     }
   ],
   "pricing_url": "https://checknumber.ai/pricing",
-  "last_updated": "2026-07-13"
+  "maintainer": "CheckNumber",
+  "license": "MIT",
+  "last_reviewed": "2026-08-18"
 }
