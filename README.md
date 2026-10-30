@@ -21,9 +21,9 @@ curl -X POST "https://api.checknumber.ai/v1/gettasks" -H "X-API-Key: ${CHECKNUMB
 
 | Code | Name | Input | Limits | Result fields | Documentation |
 | --- | --- | --- | --- | --- | --- |
-| `phoneCheck` | Validity Checker | phone | 2000–10000000 rows | `number, activated` | [docs](https://docs.checknumber.ai/phone-number-validation) |
-| `active_check` | Activity Checker | phone | 2000–10000000 rows | `number, activated` | [docs](https://docs.checknumber.ai/number-active-check) |
-| `high_value_users` | High-Value Checker | phone | 1000–500000 rows | `Mobile Number, Result` | [docs](https://docs.checknumber.ai/high-value-users-checker) |
+| `phoneCheck` | Validity Checker | phone | 1–10,000,000 rows | `number, activated` | [docs](https://docs.checknumber.ai/phone-number-validation) |
+| `active_check` | Activity Checker | phone | 1–10,000,000 rows | `number, activated` | [docs](https://docs.checknumber.ai/number-active-check) |
+| `high_value_users` | High-Value Checker | phone | 1–500,000 rows | `Mobile Number, Result` | [docs](https://docs.checknumber.ai/high-value-users-checker) |
 
 ## Response and boundaries
 
@@ -44,4 +44,15 @@ Seven self-contained examples are provided under `examples/`: Python, Node.js, G
 - Pricing: https://checknumber.ai/pricing
 - OpenAPI contract: [openapi.yaml](openapi.yaml)
 
-Last reviewed: 2026-08-18.
+Last reviewed: 2026-10-30.
+
+
+## Upload and billing limits verified 2026-10-30
+
+| Task type | Minimum upload | Maximum upload | Minimum billable quantity |
+| --- | ---: | ---: | ---: |
+| `phoneCheck` | 1 | 10,000,000 | 500 |
+| `active_check` | 1 | 10,000,000 | 500 |
+| `high_value_users` | 1 | 500,000 | 500 |
+
+Upload minimum and minimum billable quantity are different. A smaller accepted upload can still be billed at the stated minimum. Zero means no billing floor. A wholly failed/unprocessed task is not charged a fabricated minimum. Check current account pricing before submitting.

@@ -37,40 +37,49 @@
       "name": "Validity Checker",
       "doc_slug": "phone-number-validation",
       "input_kind": "phone",
-      "min_numbers": 2000,
+      "min_numbers": 1,
       "max_numbers": 10000000,
       "result_fields": [
         "number",
         "activated"
-      ]
+      ],
+      "product_id": 41,
+      "min_billable_numbers": 500,
+      "available": true
     },
     {
       "task_type": "active_check",
       "name": "Activity Checker",
       "doc_slug": "number-active-check",
       "input_kind": "phone",
-      "min_numbers": 2000,
+      "min_numbers": 1,
       "max_numbers": 10000000,
       "result_fields": [
         "number",
         "activated"
-      ]
+      ],
+      "product_id": 60,
+      "min_billable_numbers": 500,
+      "available": true
     },
     {
       "task_type": "high_value_users",
       "name": "High-Value Checker",
       "doc_slug": "high-value-users-checker",
       "input_kind": "phone",
-      "min_numbers": 1000,
+      "min_numbers": 1,
       "max_numbers": 500000,
       "result_fields": [
         "Mobile Number",
         "Result"
-      ]
+      ],
+      "product_id": 66,
+      "min_billable_numbers": 500,
+      "available": true
     }
   ],
   "pricing_url": "https://checknumber.ai/pricing",
   "maintainer": "CheckNumber",
   "license": "MIT",
-  "last_reviewed": "2026-08-18"
+  "last_reviewed": "2026-10-30"
 }
